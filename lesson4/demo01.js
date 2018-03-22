@@ -10,6 +10,7 @@ f(1,2,3);
 // 1
 2
 3
+
 function foo(){  
     console.log("this:",this);
 }
