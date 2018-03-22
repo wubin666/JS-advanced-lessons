@@ -1,6 +1,7 @@
 /**
  * created on 2018/3/22
  */
+
 //函数定义 声明方式
 var str="return a<b?a:b";
 var min=new Function("a","b",str);
