@@ -146,3 +146,21 @@ function f3(x){
 console.log(foo(1,1,f1,f3));//1
 console.log(foo(1,1,f3,f2));//2
 console.log(foo(1,1,f1,f2));//4
+
+var x=12;
+var obj = {
+    x:34,
+    fun2:function(){
+        console.log(this.x,this);
+    }
+};
+var fun1 = function () {
+    return function fun2() {
+        return this.x;
+    }
+};
+obj.fun3 = fun1;
+obj.fun4 = fun1();
+console.log("输出：",obj.fun3());//输出： function fun2() {return this.x;}
+console.log("输出：",obj.fun3()());//输出：12
+console.log("输出：",obj.fun4());//输出：34
